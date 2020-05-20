@@ -15,7 +15,7 @@ app.use(express.json());
 app.get('/api/bricks', (req, res) => {
   connectionPool.query('SELECT * FROM bricks', (err, data) => {
     if (err) {
-      res.sendStatus(500);
+      res.status(500).json(err);
     } else {
       res.json(data.map(el => ({id: el.id, text: el.content})));
     }
@@ -26,7 +26,7 @@ app.post('/api/bricks', (req, res) => {
   const sql = 'INSERT INTO bricks (content) VALUES (?)';
   connectionPool.query(sql, [req.body.text], (err, data) => {
     if (err) {
-      res.sendStatus(500);
+      res.status(500).json(err);
     } else {
       res.sendStatus(204);
     }
