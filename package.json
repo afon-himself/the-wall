@@ -9,7 +9,9 @@
   "scripts": {
     "server": "nodemon server.js",
     "client": "cd client && npm run start",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "client-build": "cd client && npm run build",
+    "build-and-start": "npm run client-build && node server.js"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
