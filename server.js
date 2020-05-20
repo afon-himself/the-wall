@@ -12,12 +12,6 @@ const connectionPool = mysql.createPool({
 const app = express();
 app.use(express.json());
 
-let id = 2;
-const bricks = [
-  { id: 1, text: 'This is the first message' },
-  { id: 2, text: 'This is the second message' }
-];
-
 app.get('/api/bricks', (req, res) => {
   connectionPool.query('SELECT * FROM bricks', (err, data) => {
     if (err) {
