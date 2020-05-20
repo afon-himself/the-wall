@@ -23,7 +23,6 @@ class App extends React.Component {
         'Content-type': 'application/json'
       }
     })
-      .then(response => response.json())
       .then(() => this.fetchAllBricks());
   }
   render() {
