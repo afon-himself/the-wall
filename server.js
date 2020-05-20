@@ -15,7 +15,7 @@ app.use(express.json());
 app.get('/api/bricks', (req, res) => {
   connectionPool.query('SELECT * FROM bricks', (err, data) => {
     if (err) {
-      res.status(500);
+      res.sendStatus(500);
     } else {
       res.json(data.map(el => ({id: el.id, text: el.content})));
     }
