@@ -1,5 +1,7 @@
 # The wall
 
+This application was created during "Creating web-application" masterclass for Algoritmika Coding Bootcamp.
+
 ## Run dev app
 Run `npm run dev`
 
